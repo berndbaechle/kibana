@@ -203,6 +203,14 @@ define([
       case 'float':
         value = numeral(value).format('0.000');
         break;
+      case 'cent as euro':
+        value = value / 100;
+        value = numeral(value).format('0,0');
+        break;
+      case 'cent as euro exact':
+        value = value / 100;
+        value = numeral(value).format('0,0.00');
+        break;
       default:
         value = numeral(value).format('0,0');
       }
